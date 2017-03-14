@@ -1,3 +1,9 @@
+INSERT 0 4
+INSERT 0 8
+ bid_winner_set 
+----------------
+ 
+
  id | tender_id | product_id | amount | price | is_winner | win_amount 
 ----+-----------+------------+--------+-------+-----------+------------
   4 |         1 |          1 |      3 |   104 | t         |     (null)

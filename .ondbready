@@ -1,0 +1,29 @@
+#!/bin/bash
+#
+# скрипт запускается в контейнере pgrest по готовности БД
+#
+
+PGM_DIR=pgm
+PGM_CMD=pgm.sh
+
+user=$APPUSER
+[[ "$user" ]] || user=$USER
+
+echo "Setup db $DB_NAME as user $user..."
+
+ROOT=$PWD
+[ -d var ] || mkdir -p -m 777 var && chown $user var
+
+# code from pgm
+SQLROOT=pgm/sql gosu $user bash $PGM_DIR/$PGM_CMD creatif ws
+
+# project code
+
+# загрузить DO_
+. .config
+
+# пакет exp загружается из дампа
+[[ "$DO_CREATIF" ]] && gosu $user bash $PGM_DIR/$PGM_CMD creatif $DO_CREATIF
+[[ "$DO_RECREATE" ]] && gosu $user bash $PGM_DIR/$PGM_CMD recreate $DO_RECREATE
+
+echo "Setup complete."

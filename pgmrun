@@ -1,0 +1,14 @@
+#!/bin/bash
+#
+# Запуск pgm в контейнере iac c правами пользователя $APPUSER
+# 
+# Примеры вызова:
+#
+# ./pgmrun create rest
+#
+# ./pgmrun pgm/sql recreate utils
+#
+
+. .config
+docker exec -ti "${PROJECT}_${APP_SITE}_www" bash /home/app/pgm/pgm-inside-docker.sh /home/app $@
+
