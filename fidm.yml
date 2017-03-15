@@ -26,7 +26,7 @@ env:
 - APP_PORT=3000
 - DB_PASS=SET_DB_PASS_HERE_OR_IN_fidm.yml
 - DBRPC_SCHEMAS="tnd,ws,public"
-- JWT_KEY=000000
+- DBRPC_JWT_KEY=0000000
 - PG_PORT=5432
 - PGTZ=Europe/Moscow
 
