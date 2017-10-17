@@ -3,7 +3,7 @@
 
 Тестовое задание имеет целью реализовать деплой текущего проекта.
 
-1. Написать скрипт на bash и модифицировать Makefile так, чтобы по команде "make db":
+**1. Написать скрипт на bash и модифицировать Makefile так, чтобы по команде "make db":**
 
 * ставился docker (если его нет)
 * скачивался [контейнер postgresql](https://store.docker.com/community/images/dopos/postgresql)
@@ -15,7 +15,7 @@
 
 Форма результата: архив NAME.1.tag.gz
 
-2. Сделать приложение [dcape](https://github.com/dopos/dcape) для деплоя
+**2. Сделать приложение [dcape](https://github.com/dopos/dcape) для деплоя**
 
 В качестве основы взять [pgrpc-sql](https://github.com/pgrpc/pgrpc-sql)
 
